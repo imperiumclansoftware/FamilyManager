@@ -1,19 +1,31 @@
+{% trans_default_domain('family') %}
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
+        {{ encore_entry_link_tags('app') }}
         {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
-        {% endblock %}
 
+        {% endblock %}
+        {{ encore_entry_script_tags('app') }}
         {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
+
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {{ renderNavBar('mainnav') }}
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <h1><i class="{{ pageIcone|default('fa fa-home') }}"></i> {{ pageTitle|default('Homepage')|trans }}</h1>
+                </div>
+            </div>
+        {% block body %}
+        {% endblock %}
+        </div>
     </body>
 </html>
