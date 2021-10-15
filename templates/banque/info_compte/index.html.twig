@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}InfoCompte index{% endblock %}
+
+{% block body %}
+    <h1>InfoCompte index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>CleEtablissement</th>
+                <th>Guichet</th>
+                <th>NumCompte</th>
+                <th>CleRice</th>
+                <th>Domiciliation</th>
+                <th>Bic</th>
+                <th>Iban</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for info_compte in info_comptes %}
+            <tr>
+                <td>{{ info_compte.id }}</td>
+                <td>{{ info_compte.cleEtablissement }}</td>
+                <td>{{ info_compte.guichet }}</td>
+                <td>{{ info_compte.numCompte }}</td>
+                <td>{{ info_compte.cleRice }}</td>
+                <td>{{ info_compte.domiciliation }}</td>
+                <td>{{ info_compte.bic }}</td>
+                <td>{{ info_compte.iban }}</td>
+                <td>
+                    <a href="{{ path('info_compte_show', {'id': info_compte.id}) }}">show</a>
+                    <a href="{{ path('info_compte_edit', {'id': info_compte.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('info_compte_new') }}">Create new</a>
+{% endblock %}

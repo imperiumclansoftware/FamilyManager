@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Chequier{% endblock %}
+
+{% block body %}
+    <h1>Edit Chequier</h1>
+
+    {{ include('chequier/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('chequier_index') }}">back to list</a>
+
+    {{ include('chequier/_delete_form.html.twig') }}
+{% endblock %}

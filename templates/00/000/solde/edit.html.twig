@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Solde{% endblock %}
+
+{% block body %}
+    <h1>Edit Solde</h1>
+
+    {{ include('solde/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('solde_index') }}">back to list</a>
+
+    {{ include('solde/_delete_form.html.twig') }}
+{% endblock %}

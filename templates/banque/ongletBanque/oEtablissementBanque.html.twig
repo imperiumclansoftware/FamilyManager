@@ -1,0 +1,42 @@
+{# Les onglets tabs de la l'administration Banque #}
+
+{# {% include "banque/ongletBanque/oEtablissementBanque.html.twig" %} #}
+
+
+  <div class="container-fluid"> <div class="row">
+    <div class="col-12">
+      <ul class="nav nav-tabs mt-3">
+        <li class="nav-item">
+          <a href="#etablissementB" aria-controls="etablissementB" role="tab" data-toggle="tab" class="nav-link active">
+            {{ "établissement"|capitalize |trans }}
+            &nbsp;
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#nouveauEB" aria-controls="nouveauEB" role="tab" data-toggle="tab" class="nav-link ">
+            {{ "nouveau"|capitalize |trans }}
+            &nbsp;
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#modificationEB" aria-controls="modificationEB" role="tab" data-toggle="tab" class="nav-link ">
+            {{ "Modification"|capitalize |trans }}
+            &nbsp;
+          </a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane  active" id="etablissementB">
+          {{ dump(agencebanques) }}
+          {% include "banque/ongletBanque/decoupeOngletB/etabEtabliB.html.twig" with {'agencebanques': agencebanques} %}
+        </div>
+        <div role="tabpanel" class="tab-pane" id="nouveauEB">
+          {% include "banque/ongletBanque/decoupeOngletB/etabEtabliBNew.html.twig" %}
+        </div>
+        <div role="tabpanel" class="tab-pane" id="modificationEB">
+          {% include "banque/ongletBanque/decoupeOngletB/etabEtabliBModification.html.twig" %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

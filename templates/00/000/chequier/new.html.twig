@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Chequier{% endblock %}
+
+{% block body %}
+    <h1>Create new Chequier</h1>
+
+    {{ include('chequier/_form.html.twig') }}
+
+    <a href="{{ path('chequier_index') }}">back to list</a>
+{% endblock %}

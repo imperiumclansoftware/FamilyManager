@@ -1,0 +1,155 @@
+{# Banque Default Twig template #}
+
+{# {% extends 'banque/banque/indexDefault.html.twig' %} #}
+
+{% extends 'indexDefault.html.twig' %}
+
+  {% block styleSheet %}
+  {{ encore_entry_link_tags("comptePerso") }}
+{{ encore_entry_link_tags("accueilGlobal") }}
+{% endblock %}
+  {% block title %}
+Compte Bancaire
+{% endblock title %}
+
+  {% block main %}
+
+    <div class="row">
+ <div class="col-12 center">
+
+      <button class="btn btn-info" id="cliclMoi">
+        Click moi
+      </button>
+    </div>
+  </div>
+
+
+  <div class="almond">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="titreDashbord">
+          Home - DashBord
+        </h1>
+      </div>
+    </div>
+    <div class="container-fluid ">
+      <div
+        class="row">
+        {# //--- N°1 #}
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <divi class="black arrondi ombrageGris" style="background-color: #B3A79A;" id="test2">
+            <div class="center">
+              <h1 class="mt-1">Solde</h1>
+            </div>
+          </divi>
+          <div class="card black  mt-4">
+            <div class="card-header" style="background-color: #EFDECD;">
+              <div class="card-icon mt-4">
+                <i class="material-icons mb-4">
+                  <h3 class="droite mt-4">Compte courant</h3>
+                </i>
+              </div>
+              <h3 class="card-title droite">1365
+                <small>€</small>
+              </h3>
+            </div>
+          </div>
+        </div>
+        {# //--- N°2 #}
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <divi class="black arrondi ombrageGris" style="background-color: #B3A79A;" id="test2">
+            <div class="center">
+              <h1 class="mt-1">Solde</h1>
+            </div>
+          </divi>
+          <div class="card black  mt-4">
+            <div class="card-header" style="background-color: #EFDECD;">
+              <div class="card-icon mt-4">
+                <i class="material-icons mb-4">
+                  <h3 class="droite mt-4">Compte courant</h3>
+                </i>
+              </div>
+              <h3 class="card-title droite">1365
+                <small>€</small>
+              </h3>
+            </div>
+          </div>
+        </div>
+        {# //--- N°3 #}
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <divi class="black arrondi ombrageGris" style="background-color: #B3A79A;" id="test2">
+            <div class="center">
+              <h1 class="mt-1">Solde</h1>
+            </div>
+          </divi>
+          <div class="card black  mt-4">
+            <div class="card-header" style="background-color: #EFDECD;">
+              <div class="card-icon mt-4">
+                <i class="material-icons mb-4">
+                  <h3 class="droite mt-4">Compte courant</h3>
+                </i>
+              </div>
+              <h3 class="card-title droite">1365
+                <small>€</small>
+              </h3>
+            </div>
+          </div>
+        </div>
+        {# //--- N°4 #}
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <divi class="black arrondi ombrageGris" style="background-color: #B3A79A;" id="test2">
+            <div class="center">
+              <h1 class="mt-1">Solde</h1>
+            </div>
+          </divi>
+          <div class="card black  mt-4">
+            <div class="card-header" style="background-color: #EFDECD;">
+              <div class="card-icon mt-4">
+                <i class="material-icons mb-4">
+                  <h3 class="droite mt-4">Compte courant</h3>
+                </i>
+              </div>
+              <h3 class="card-title droite">1365
+                <small>€</small>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="alert alert-info">
+          <p>Suivi & Gestion Family.</p>
+        </div>
+      </div>
+      {# //--- #}
+      {# //--- #}
+
+      <div class="row">
+        <div class="col-3">
+          <a href="#" class="btn btn-panda">
+            <h1>Nathan</h1>
+            <span>Geronimo8080 with ❤️</span>
+          </a>
+        </div>
+      </div>
+      {# </div> #}
+      <div class="row"></div>
+      <div
+        class="row">
+        {# test #}
+        <divi style="background-color: bisque;" id="test1">Fifi</divi>
+        <divi style="background-color: aquamarine;" id="test2">toto</divi>
+        <divi style="background-color: red;" id="test3">chipie</divi>
+        <divi style="background-color: green;" id="test4">rocky</divi>
+
+
+        {# test #}
+      </div>
+
+
+    </div>
+  </div>
+
+</div>{% endblock main %}{% block javaScripts %}
+{{ encore_entry_script_tags("comptePerso") }}
+{{ encore_entry_script_tags("accueilGlobal") }}{% endblock javaScripts %}

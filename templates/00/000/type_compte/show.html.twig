@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TypeCompte{% endblock %}
+
+{% block body %}
+    <h1>TypeCompte</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ type_compte.id }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ type_compte.type }}</td>
+            </tr>
+            <tr>
+                <th>Interet</th>
+                <td>{{ type_compte.interet }}</td>
+            </tr>
+            <tr>
+                <th>Carte</th>
+                <td>{{ type_compte.carte ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Chequier</th>
+                <td>{{ type_compte.chequier ? 'Yes' : 'No' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('type_compte_index') }}">back to list</a>
+
+    <a href="{{ path('type_compte_edit', {'id': type_compte.id}) }}">edit</a>
+
+    {{ include('type_compte/_delete_form.html.twig') }}
+{% endblock %}

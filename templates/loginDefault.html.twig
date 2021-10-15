@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block styleSheet %}
+{{ encore_entry_link_tags("login") }}
+{% endblock %}
+
+{% block title %} Login! {% endblock %}
+
+{% block body %}
+
+<body>
+
+	<div class="container fixed-top">
+		<div class="text">
+			<p>Gestion Family</p>
+			<p>
+				<span class="word wisteria">Banque.</span>
+				<span class="word belize">Assurance.</span>
+				<span class="word pomegranate">Voiture.</span>
+				<span class="word green">Eau.</span>
+				<span class="word midnight">Electricité.</span>
+			</p>
+		</div>
+	</div>
+	<header>
+		<div id="intro" class="view">
+			<div class="full-bg-img">
+				<div class="display">
+					<img class="displayed" src="{{ asset('images/multiMan.png') }}" title="image centrale" alt="a man think" />
+				</div>
+				{% block login %} {% endblock %}
+			</div>
+		</div>
+	</header>
+	<main></main>
+	<footer></footer>
+
+</body>
+{% endblock body %}
+
+{% block javaScripts %}
+{{ encore_entry_script_tags("login") }}
+{% endblock javaScripts %}

@@ -1,0 +1,47 @@
+{#{% extends 'base.html.twig' %}#}
+
+{# view pour la gestion des Banque #}
+
+{% extends 'banque/banque/indexBanque.html.twig' %}
+
+  {% block title %}
+{{ "Gestion des Comptes Banquaires" |trans }}
+{% endblock %}
+
+  {% block body %}
+    <div class="row"> <div class="col-sm-1" id="block">
+      {% block sideNav %}
+        {# {{ parent() }} #}
+      {% endblock sideNav %}
+    </div>
+
+    <div class="col-sm-11" id="block">
+      <div class="card padCard bg-dark" id="cardBlock">
+
+        {% block main %}
+          <div class="card-header textCenter">
+            <h3>Administration Bancaire</h3>
+          </div>
+          <div class="card-body">
+            <div>
+              <h4 class="center">Gestion des Comptes bancaires</h4>
+
+              <div class="row-fluid mt-4">
+                <div class="card bg-dark">
+                  <div
+                    class="card-body">
+
+                    {#      //--- les onglets  #}
+                    {% include "banque/ongletBanque/oAdminBanque.html.twig" %}
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endblock main %}
+    </div>
+  </div>
+</div>{% endblock body %}{% block javascripts %}
+<script></script>{% endblock javascripts %}

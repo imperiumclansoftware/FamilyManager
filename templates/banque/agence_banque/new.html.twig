@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle agence Bancaire{% endblock %}
+
+{% block body %}
+{% block left %}
+    {{ parent }}
+{% endblock %}
+{% block main %}
+    <h1>Create new AgenceBanque</h1>
+
+    {{ include('agence_banque/_form.html.twig') }}
+
+    <a href="{{ path('agence_banque_index') }}">back to list</a>
+{% endblock %}
+{% endblock %}

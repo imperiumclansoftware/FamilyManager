@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+{% trans_default_domain('user') %}
+{% block title %}New User
+{% endblock %}
+
+{% block main %}
+
+	<div class="card" style="margin: auto; margin-top: 70px;">
+
+		<div class="card-header text-center ">
+			<h4>Création d'un nouvel utilisateur</h4>
+		</div>
+		<div class="card-body">
+
+			<div class="container-fluid">
+				{{ form_start(form) }}
+				<div class="row">
+					<div class="col-4">
+						{{ form_row(form.username) }}
+					</div>
+					<div class="col-4">
+						{{ form_row(form.name) }}
+					</div>
+					<div class="col-4">
+						{{ form_row(form.surname) }}
+					</div>
+				</div>
+				<div class="row mt-4">
+					<div class="col-6" style=" padding-left: 0;">
+						<div class="col-12">
+							{{ form_row(form.roles) }}
+						</div>
+						<div class=" col-12">
+							{{ form_row(form.email) }}
+						</div>
+						<div class="col-12">
+							<div >
+							Avatar
+								<button class="btn btn btn-info float-center choixAvatar">
+											{# <span class="fa fa-bars"></span> #}
+									{{ form_row(form.avatar) }}
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="col-6">
+						{{ form_row(form.password) }}
+					</div>
+				</div>
+				<div class="row mt-4">
+					<div class="col-12">
+						<div class="btn-group float-right">
+							{{  form_widget(form.submit) }}
+							<a href="{{ path('user_index') }}" type="button" class="btn btn-danger white">Annuler</a>
+						</div>
+					</div>
+				</div>
+				{{ form_end(form) }}
+			</div>
+		</div>
+	</div>
+
+
+{% endblock %}

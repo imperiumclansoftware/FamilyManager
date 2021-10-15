@@ -1,0 +1,25 @@
+<?php
+
+namespace App\Form\Type\banque;
+
+use App\Entity\banque\SousCategorie;
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+
+class SousCategorieType extends AbstractType
+{
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+        $builder
+            ->add('nomSousCategorie')
+        ;
+    }
+
+    public function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver->setDefaults([
+            'data_class' => SousCategorie::class,
+        ]);
+    }
+}

@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}InfoCompte{% endblock %}
+
+{% block body %}
+    <h1>InfoCompte</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ info_compte.id }}</td>
+            </tr>
+            <tr>
+                <th>CleEtablissement</th>
+                <td>{{ info_compte.cleEtablissement }}</td>
+            </tr>
+            <tr>
+                <th>Guichet</th>
+                <td>{{ info_compte.guichet }}</td>
+            </tr>
+            <tr>
+                <th>NumCompte</th>
+                <td>{{ info_compte.numCompte }}</td>
+            </tr>
+            <tr>
+                <th>CleRice</th>
+                <td>{{ info_compte.cleRice }}</td>
+            </tr>
+            <tr>
+                <th>Domiciliation</th>
+                <td>{{ info_compte.domiciliation }}</td>
+            </tr>
+            <tr>
+                <th>Bic</th>
+                <td>{{ info_compte.bic }}</td>
+            </tr>
+            <tr>
+                <th>Iban</th>
+                <td>{{ info_compte.iban }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('info_compte_index') }}">back to list</a>
+
+    <a href="{{ path('info_compte_edit', {'id': info_compte.id}) }}">edit</a>
+
+    {{ include('info_compte/_delete_form.html.twig') }}
+{% endblock %}

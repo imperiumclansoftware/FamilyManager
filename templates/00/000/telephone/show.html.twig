@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Telephone{% endblock %}
+
+{% block body %}
+    <h1>Telephone</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ telephone.id }}</td>
+            </tr>
+            <tr>
+                <th>TelephoneDetenteur1</th>
+                <td>{{ telephone.telephoneDetenteur1 }}</td>
+            </tr>
+            <tr>
+                <th>TelephoneDetenteur2</th>
+                <td>{{ telephone.telephoneDetenteur2 }}</td>
+            </tr>
+            <tr>
+                <th>TelephonePro1</th>
+                <td>{{ telephone.telephonePro1 }}</td>
+            </tr>
+            <tr>
+                <th>TelephonePro2</th>
+                <td>{{ telephone.telephonePro2 }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('telephone_index') }}">back to list</a>
+
+    <a href="{{ path('telephone_edit', {'id': telephone.id}) }}">edit</a>
+
+    {{ include('telephone/_delete_form.html.twig') }}
+{% endblock %}

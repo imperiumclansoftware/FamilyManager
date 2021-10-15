@@ -1,0 +1,52 @@
+{# Crédit Divers & sans frais #}
+
+{#{% extends 'base.html.twig' %}#}
+
+{# view pour la gestion des Banque #}
+
+{% extends 'banque/banque/indexBanque.html.twig' %}
+
+{% block title %}{{ "Crédits Divers" |trans }}{% endblock %}
+
+{% block body%}
+    <div class="row" id="" style="">
+        <div class="col-sm-1" id="block" style="">
+            {% block sideNav %}
+                {{ parent() }}
+            {% endblock sideNav %} 
+        </div>
+        <div class="col-sm-11" id="block" style="">
+            <div class="card padCard bg-dark" id="cardBlock">
+
+                {% block main %}
+                    <div class="card-header textCenter" >
+                        <h3>{{ "crédits Divers" |capitalize}}</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="" id="" style="">
+                            <h4 class="center" >Gestion des crédits bancaires</h4>
+
+                            <div class="row-fluid mt-4" id="" style="">
+                                <div class="card bg-dark" id="" style="">
+                                    <div class="card-body" id="" style="">
+                                        {#      //--- les onglets  #}
+                                        {% include "banque/ongletBanque/oCreditBanque.html.twig" %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endblock main %}
+        </div>
+    </div>
+</div>
+{% endblock body %}
+
+{% block javascripts %}
+    <script>
+
+    </script>
+{% endblock javascripts %}
+
+

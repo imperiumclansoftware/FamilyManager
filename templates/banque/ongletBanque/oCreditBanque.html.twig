@@ -1,0 +1,45 @@
+{# Les onglets tabs du Crédit Banque #}
+
+{# {% include "banque/ongletBanque/oCreditBanque.html.twig" %} #}
+
+
+<div class="container-fluid"> 
+      
+        <div class="row"> 
+            <div class="col-12"> 
+              <ul class="nav nav-tabs mt-3">
+                        <li class="nav-item">
+                            <a href="#creditCB" aria-controls="creditCB" role="tab" data-toggle="tab" class="nav-link active ">
+                                {{ "Crédits en cours"|capitalize |trans }}  &nbsp;   
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#nouveauCB" aria-controls="nouveauCB" role="tab" data-toggle="tab" class="nav-link ">
+                                {{ "nouveau"|capitalize |trans }} &nbsp;
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#modificationCB" aria-controls="modificationCB" role="tab" data-toggle="tab" class="nav-link ">
+                                {{ "Modification"|capitalize |trans }} &nbsp;
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#adminCB" aria-controls="adminCB" role="tab" data-toggle="tab" class="nav-link ">
+                                {{ "Admin"|capitalize |trans }} &nbsp;
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane  active" id="creditCB">
+                          
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="nouveauCB">
+                            
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="adminCB">
+                            
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>

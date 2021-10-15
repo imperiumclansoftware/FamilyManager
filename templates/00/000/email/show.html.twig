@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Email{% endblock %}
+
+{% block body %}
+    <h1>Email</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ email.id }}</td>
+            </tr>
+            <tr>
+                <th>EmailPro</th>
+                <td>{{ email.emailPro }}</td>
+            </tr>
+            <tr>
+                <th>EmailPerso</th>
+                <td>{{ email.emailPerso }}</td>
+            </tr>
+            <tr>
+                <th>EmailPersoConjoint</th>
+                <td>{{ email.emailPersoConjoint }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('email_index') }}">back to list</a>
+
+    <a href="{{ path('email_edit', {'id': email.id}) }}">edit</a>
+
+    {{ include('email/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,20 @@
+{# onglet Gaz #}
+
+{# {% include 'menu/onglet/ongletGaz.html.twig' %} #}
+
+<div class="" id="navGaz" style="">
+    
+    <div class="ui top attached tabular menu">
+        <a class="item active" data-tab="hGaz">Home Gaz</a>
+        <a class="item" data-tab="modificationGaz">Modification</a>
+        <a class="item" data-tab="fournisseurGaz">Fournisseur</a>
+        <a class="item" data-tab="compteurGaz">Compteur</a>
+    </div>
+    <div class="ui bottom attached tab segment active" data-tab="hElectricite">My home Gaz</div>
+    <div class="ui bottom attached tab segment" data-tab="modificationGaz">Modification</div>
+    <div class="ui bottom attached tab segment" data-tab="fournisseurGaz">Fournisseur</div>
+    <div class="ui bottom attached tab segment" data-tab="compteurGaz">Compteur</div>
+
+</div>
+
+<script src="{{ asset('js/ongletNav/oGaz.js') }}" type="text/javascript"></script>

@@ -1,0 +1,81 @@
+{# Barre de Navigation #}
+{# {% include 'menu/NavBar.html.twig' %} #}
+
+{{ encore_entry_link_tags("navBar") }}
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark "> <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerBank" aria-controls="navbarTogglerBank" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#!">
+    <img src="{{ asset('images/banF2.jpg') }}" id="cadreMenuPhoto" alt="Banniere logo"/>
+  </a>
+  <div class="collapse navbar-collapse" id="navbarTogglerBank">
+    <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+      <li class="nav-item ">{# <a class="nav-link active" id="home" href="{{ path('default') }}">Home #}
+        {#     <span class="sr-only">(current)</span>#}
+        {# </a> #}
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="banque" href="#!">Banque</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="gaz" href="#!">Gaz</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="electricite" href="#!">{{ "électricité" |capitalize }}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="chauffage" href="#!">Chauffage</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="eau" href="#!">Eau</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="voiture" href="#!">Voiture</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="credit" href="#!">Crédit</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="assurance" href="#!">Assurance</a>
+      </li>
+    </ul>
+    {% if is_granted('ROLE_USER') %}
+      <ul class="navbar-nav ml-2">
+        <li class="nav-item">
+          <a class="nav-link" id="admin" href="{{ path('admin') }}">Administration</a>
+        </li>
+      </ul>
+    {% endif %}
+    <form class=" ">
+      <input class="form-control mr-sm-2" type="text" placeholder="Recherche..."></form>
+
+      <ul class="navbar-nav ml-2">
+        {% if is_granted('ROLE_USER') %}
+          <div class="ml-4 mr-4" id="NameLogin">
+            <h5>
+              {{ app.user.name }}
+              {{ app.user.surname }}
+            </h5>
+          </div>
+          <div class="ui dropdown right item">
+            <i class="dropdown icon"></i>
+            <div class="menu">
+              <a href="{{ path('app_logout') }}" class="item">
+                <i class="ui sign-out icon"></i>
+                Sign Out
+              </a>
+            </div>
+          </div>
+        {% else %}
+          <a href="{{ path('app_login') }}" class="right item">
+            <i class="ui icon sign-in"></i>
+            Connexion
+          </a>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
+
+  {{ encore_entry_script_tags("navBar") }}

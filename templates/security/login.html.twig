@@ -1,0 +1,26 @@
+{% extends 'loginDefault.html.twig' %}
+
+{% block login %}
+<div class="login-box" id="login">
+  <form id="form" method="POST">
+    <h2>Authentification</h2>
+    <div class="user-box">
+      <input type="text" value="" name="username" id="inputname" class="" required="" />
+      <label for="inputname">Username</label>
+    </div>
+    <div class="user-box">
+      <input type="password" value="" name="password" id="inputPassword" class="" required="" />
+      <label for="inputPassword">Password</label>
+    </div>
+
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
+    <a href="#" id="btnConnexion" class="btn boutonConnexion">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span> Connexion
+    </a>
+  </form>
+</div>
+
+{% endblock login %}

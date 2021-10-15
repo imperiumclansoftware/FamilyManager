@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block pageTitle %} {{ parent() }} {% endblock %}
+{% block left %}
+    {{ parent() }}
+{% endblock %}
+
+{% block main %}
+    <p>Agence Banque index</p>
+
+
+    <h1>AdresseBanque index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>NumVoie</th>
+                <th>Voie</th>
+                <th>Cp</th>
+                <th>Ville</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for agence_banque in agence_banques %}
+                <tr>
+                    <td>{{ agence_banque.id }}</td>
+                    <td>{{ agence_banque.numVoie }}</td>
+                    <td>{{ agence_banque.voie }}</td>
+                    <td>{{ agence_banque.cp }}</td>
+                    <td>{{ agence_banque.ville }}</td>
+                    <td>
+                        <a href="{{ path('agence_banque_show', {'id': agence_banque.id}) }}">show</a>
+                        <a href="{{ path('agence_banque_edit', {'id': agence_banque.id}) }}">edit</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td {#colspan="6"#}>no records found</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('agence_banque_new') }}">Create new</a>
+
+        {% endblock %}
+
+
+    {% block right %}
+
+    {% endblock %}
+

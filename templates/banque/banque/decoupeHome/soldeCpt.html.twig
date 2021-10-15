@@ -1,0 +1,82 @@
+{# Twig : Home page concerne le Solde #}
+
+{# {% include "banque/banque/decoupeHome/soldeCpt.html.twig" %} #}
+
+
+<div class="card-body padCard bg-dark noneBordureArrondiKO zeroMP" id="" style="">
+	<div class="card-body zeroMP">
+		<h4 class="center">{{ "Solde des comptes"| badge  }}</h4>
+		<div class="card-body zeroMP" id="" style="">
+			<div class="col-sm-12 zeroMP" id="" style="">
+				<div class="row zeroMP" id="" style="background: red;">
+					<div class="col-sm-6 zeroMP" id="" style="">
+						<div class="col-sm-12" id="" style="">
+							<div class="card-body text-center zeroMP" id="" style="background: purple;">
+								<div class="card-title">
+									<h5>
+										{{ "Compte courant"| title | badge({'color': 'danger'}) }}
+									</h5>
+								</div>
+								<p class="card-text">
+									{#                                    {{ "11000000"|number_format(2, ',', '.')   }} &nbsp; €#}
+									{{ "11000000"|number_format(2, ',', '.') |E}}
+									{{ "52556" |E }}
+								</p>
+								<div class="row" id="">
+									<div class="col-sm-12 ">
+										<div class="btn-group text-center">
+											<button type="button" class="btn btn-success">{{ "Ajouter Crédit"|title }}</button>
+											<button type="button" class="btn btn-danger">{{ "Ajouter Débit"|title }}</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 zeroMP" id="" style="">
+						<div class="col-sm-12" id="" style="">
+							<div class="card-body text-center" id="" style="background: brown;">
+								<div class="card-title">
+									{{ "Compte courant"|title |badge({'color': 'warning', 'rounded': true}) }}
+								</div>
+
+
+								<table
+									class="tailleFont12 table tablesorter-bootstrap table-hover   tablesorter mt-4 bg-dark text-center">
+									<thead class="thead-light">
+										{#//--- Pour la Structure du Tableau #}
+										<tr>
+											<th>Compte</th>
+											<th>Solde</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Livret A</td>
+											<td>500,00€</td>
+										</tr>
+										{#       <tr>
+																														                                                   <td>Livret A</td>
+																														                                                   <td>1500,00€</td>
+																														                                               </tr>  <tr>
+																														                                                   <td>PEL</td>
+																														                                                   <td>200,00€</td>
+																														                                               </tr>
+																														                                               <tr>
+																														                                                   <td>CEL</td>
+																														                                                   <td>200,00€</td>
+																														                                               </tr>
+																														                                               <tr>
+																														                                                   <td>Livret A</td>
+																														                                                   <td>1500,00€</td>
+																														                                               </tr>#}
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block styleSheet %}
+{{ encore_entry_link_tags("sideMenu") }}
+{{ encore_entry_link_tags("navBar") }}
+{% endblock styleSheet%}
+
+
+
+{% block title %}Compte Bancaire{% endblock title %}
+{% block body %}
+<div class="container-fluid margeGBody">
+	<div class="row">
+		<div class="col-sm-12 bg-dark" id="margeNavbar">
+			{% include "menu/NavBar.html.twig" %}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-1 margeGauche">
+			{% block sideMenu %}
+			{% include "menu/sideMenu/sideDecoupe/smBanque.html.twig" %}
+			{% endblock sideMenu %}
+		</div>
+
+		<div class="col-md-11 margeGauche">
+			<div class="card padCard bg-dark mt-3 rounded" id="cardBlock">
+				{% block main %}
+				{% endblock main %}
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row footer">
+	<footer class="col-sm-12" style="text-align: center;">
+		<p>© Philippe Basuyau - 2020</p>
+	</footer>
+</div>
+{% endblock body %}
+
+
+{% block javaScripts %}
+{{ encore_entry_script_tags("sideMenu") }}
+{{ encore_entry_script_tags("navBar") }}
+{% endblock javaScripts %}

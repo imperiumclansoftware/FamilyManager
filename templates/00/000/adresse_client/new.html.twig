@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New AdresseClient{% endblock %}
+
+{% block body %}
+    <h1>Create new AdresseClient</h1>
+
+    {{ include('adresse_client/_form.html.twig') }}
+
+    <a href="{{ path('adresse_client_index') }}">back to list</a>
+{% endblock %}

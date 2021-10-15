@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Email index{% endblock %}
+
+{% block body %}
+    <h1>Email index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>EmailPro</th>
+                <th>EmailPerso</th>
+                <th>EmailPersoConjoint</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for email in emails %}
+            <tr>
+                <td>{{ email.id }}</td>
+                <td>{{ email.emailPro }}</td>
+                <td>{{ email.emailPerso }}</td>
+                <td>{{ email.emailPersoConjoint }}</td>
+                <td>
+                    <a href="{{ path('email_show', {'id': email.id}) }}">show</a>
+                    <a href="{{ path('email_edit', {'id': email.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('email_new') }}">Create new</a>
+{% endblock %}

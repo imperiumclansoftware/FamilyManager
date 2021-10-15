@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New InfoCompte{% endblock %}
+
+{% block body %}
+    <h1>Create new InfoCompte</h1>
+
+    {{ include('info_compte/_form.html.twig') }}
+
+    <a href="{{ path('info_compte_index') }}">back to list</a>
+{% endblock %}

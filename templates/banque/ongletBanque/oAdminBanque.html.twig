@@ -1,0 +1,57 @@
+{# Les onglets tabs de la l'administration Banque #}
+
+{# {% include "banque/ongletBanque/oAdminBanque.html.twig" %} #}
+
+
+<div class="container-fluid"> 
+      
+        <div class="row" > 
+            <div class="col-12" > 
+              <ul class="nav nav-tabs mt-3">
+                        <li class="nav-item">
+                            <a href="#bCpt" aria-controls="bCpt" role="tab" data-toggle="tab" class="nav-link active">
+                                {{ "Compte"|capitalize |trans }}  &nbsp;   
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#bUser" aria-controls="bUser" role="tab" data-toggle="tab" class="nav-link">
+                                {{ "Client"|capitalize |trans }}  &nbsp;   
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#bCardCpt" aria-controls="bCardCpt" role="tab" data-toggle="tab" class="nav-link ">
+                                {{ "carte"|capitalize |trans }} &nbsp;
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#bChequierCpt" aria-controls="bChequierCpt" role="tab" data-toggle="tab" class="nav-link ">
+                                {{ "chéquier"|capitalize |trans }} &nbsp;
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#bCreditCpt" aria-controls="bCreditCpt" role="tab" data-toggle="tab" class="nav-link ">
+                                {{ "Crédit"|capitalize |trans }} &nbsp;
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane  active" id="bCpt">
+                            {% include "banque/ongletBanque/decoupeOngletB/adminBanCpt.html.twig" %} 
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="bUser">
+                            {% include "banque/ongletBanque/decoupeOngletB/adminBanClientCpt.html.twig" %} 
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="bCardCpt">
+                             {% include "banque/ongletBanque/decoupeOngletB/adminBanCarteCpt.html.twig" %} 
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="bChequierCpt">
+                            {% include "banque/ongletBanque/decoupeOngletB/adminBanChequierCpt.html.twig" %} 
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="bCreditCpt">
+                            {% include "banque/ongletBanque/decoupeOngletB/adminBanCreditCpt.html.twig" %} 
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+                            

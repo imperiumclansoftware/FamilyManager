@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Solde index{% endblock %}
+
+{% block body %}
+    <h1>Solde index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Positif</th>
+                <th>Negatif</th>
+                <th>Solde</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for solde in soldes %}
+            <tr>
+                <td>{{ solde.id }}</td>
+                <td>{{ solde.positif }}</td>
+                <td>{{ solde.negatif }}</td>
+                <td>{{ solde.solde }}</td>
+                <td>
+                    <a href="{{ path('solde_show', {'id': solde.id}) }}">show</a>
+                    <a href="{{ path('solde_edit', {'id': solde.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('solde_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,36 @@
+{#{% extends 'base.html.twig' %}#}
+{% extends 'banque/banque/indexBanque.html.twig' %}
+
+{% block title %}{{ "Gestion des établissements Banquaire" |trans }}{% endblock %}
+
+{% block body%}
+    <div class="row" id="" style="">
+        <div class="col-sm-1" id="block" style="">
+            {% block sideNav %}
+                 {{ parent() }}
+            {% endblock sideNav %}
+        </div>
+
+        <div class="col-sm-11" id="block" style="">
+            <div class="card padCard bg-dark" id="cardBlock">
+
+            {% block main %}
+                    <div class="card-header textCenter" >
+                        <h3>Etablissements Bancaire</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="" id="" style="">
+                            <h4 class="center" >Create new Banque</h4>
+                            <p> {{ "Ajout d'établissement banquaire" |trans }}</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="{{ path('banque_index') }}">back to list</a>
+            {% endblock main %}
+        </div>
+    </div>
+</div>
+{% endblock body %}
+{% block javascripts %}
+    <script> </script>
+{% endblock javascripts %}

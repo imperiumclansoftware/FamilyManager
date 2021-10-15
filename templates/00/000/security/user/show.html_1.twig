@@ -1,0 +1,55 @@
+{% extends "base.html.twig" %}
+
+{% block title %}User management{% endblock %}
+
+{% block body %}
+
+    <h1 class="ui header">
+        <i class="ui icon users"></i>
+        <div class="content">
+            Users management
+        </div>
+    </h1>
+    <div>
+        <a href="{{ path('admin-user-edit') }}" class="ui button primary">
+            <i class="ui icon plus"></i>
+            Add
+        </a>
+    </div>
+    <table class="ui compact celled definition table">
+        <thead>
+            <tr>
+                <th><i class="ui user circle icon"></i> Avatar</th>
+                <th>Username</th>
+                <th><i class="ui envelope icon"></i> Email</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th><i class="ui lock icon"></i> Roles</th>
+            </tr>
+        <thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>
+                {% if user.avatar %}
+                    <img class="ui image circular mini" src="{{ user.avatar.filePath|imagine_filter('uploaderThumb') }}"/>
+                {% endif %}
+                </td>
+                <td><a href="{{ path('admin-user-edit',{ id: user.id }) }}">{{ user.username }}</a></td>
+                <td>{{ ('<a href="mailto:'~ user.email ~'">' ~ user.email ~ '</a>')|default('-')|raw }}</td>
+                <td>{{ user.name|default('-') }}</td>                
+                <td>{{ user.surname|default('-') }}</td>
+                <td>
+                    <div class="ui divided list">
+                    {% for role in user.roles  %}
+                        <div class="item">
+                            {{ role }}
+                        </div>
+                    {% endfor %}
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

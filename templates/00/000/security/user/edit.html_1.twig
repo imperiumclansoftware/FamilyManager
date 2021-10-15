@@ -1,0 +1,144 @@
+{% extends "base.html.twig" %}
+
+
+
+
+{% if user.id is not null %}
+    {% set btitle = 'Edit user'  %}
+{% else %}
+    {% set btitle = 'Add user' %}    
+{% endif %}
+
+{% block title %}{{ btitle }}{% endblock %}
+
+{% block body %}
+<h1 class="ui header">
+    <i class="ui user icon"></i>
+    <div class="content">
+        {{ btitle }}
+    </div>
+</h1>
+
+{% if ((user.id is not null) and ((user.roles|length) == 1)) %}
+    {% set sinfos = 'completed' %}
+    {% set spassword = 'completed' %}
+    {% set sroles = 'active' %}    
+{% elseif ((user.id is not null) and ((user.password|length) == 0)) %}
+    {% set sinfos = 'completed' %}
+    {% set spassword = 'active' %}
+    {% set sroles = 'disabled' %}
+{% elseif user.id is null %}
+    {% set sinfos = 'active' %}
+    {% set spassword = 'disabled' %}
+    {% set sroles = 'disabled' %}
+{% else %}
+    {% set sinfos = 'completed' %}
+    {% set spassword = 'completed' %}
+    {% set sroles = 'completed' %}
+{% endif %}
+
+{# {{ dump(user) }} #}
+
+        <div class="ui mini steps">
+            <div class="{{ sinfos }} step">
+                <i class="info icon"></i>
+                <div class="content">
+                <div class="title">User Infos</div>
+                <div class="description">Create user infos</div>
+                </div>
+            </div>
+            <div class="{{ spassword }}  step">
+                <i class="user secret icon"></i>
+                <div class="content">
+                <div class="title">Attribute Password</div>
+                <div class="description">Change new user password</div>
+                </div>
+            </div>
+            <div class="{{ sroles }}  step">
+                <i class="lock icon"></i>
+                <div class="content">
+                <div class="title">Role</div>
+                <div class="description">Attribute role to user</div>
+                </div>
+            </div>
+        </div>
+
+
+
+<div class="ui grid">
+    <div class="ten wide column">
+        {{ form_start(form,{
+                    attr: {
+                        id : 'userForm' 
+                    }
+                }) 
+            }}
+
+        <div class="ui segment">
+            <h2 class="ui header">
+                <i class="ui info icon"></i>User Infos
+            </h2>
+            
+            <div class="ui three column relaxed grid">
+                <div class="column">
+                    {{ form_row(form.username) }}
+                </div>
+                <div class="column">
+                    
+                    {{ form_row(form.name) }}
+                </div>
+                <div class="column">
+                    {{ form_row(form.surname) }}
+                </div>
+            </div>
+            <div class="ui two column relaxed grid">
+                <div class="column">
+                    {{ form_row(form.avatar) }}
+                </div>
+                <div class="column">
+                    {{ form_row(form.email) }}
+                </div>
+            </div>
+            <div class="ui one column relaxed grid">
+                <div class="column">
+                    {{ form_row(form.submit) }}
+                </div>
+            </div>
+        </div>
+        
+        {{ form_end(form) }}
+    </div>
+    <div class="six wide column">
+    {% if spassword == 'completed' %}
+        {{ form_start(formpassword) }}
+        <div class="ui segment">
+            <h2 class="ui header">
+                <i class="ui user secret icon"></i>Change password
+            </h2>
+            {{ form_widget(formpassword) }}
+        </div>
+        {{ form_end(formpassword) }}
+    {% endif %}
+    {% if sroles == 'completed' or sroles == 'active' %}
+        <div class="ui segment">
+            <h2 class="ui header">
+                <i class="ui lock icon"></i>Roles
+            </h2>
+        </div>
+    {% endif %}
+        
+    </div>
+</div>
+{% endblock %}
+
+{% block javascript %}
+    <script>
+    $(document).ready(function(){
+        $('#userForm').on('submit',function(){
+            
+            $('#user_username').removeAtrr('disabled');
+        });
+    });
+        
+    </script>
+{% endblock %}

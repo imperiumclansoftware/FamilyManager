@@ -1,0 +1,84 @@
+{# Menu de l'application #}
+
+
+{# {% include "menu/sideMenu/sideDecoupe/smBanque.html.twig" %} #}
+<div class="card border-dark bg-black nav nav-pills nav-stacked sideMenu rounded-0">
+    <h5 class="card-header bg-dark text-light text-center rounded-0"><span class=""></span>Banque
+    </h5>
+    <nav class=" navbar-collapse">
+        <ul class="navbar-nav nav-pills flex-column navbar-dark bg-dark">
+            <li class="nav-item">
+                <a class="nav-link white active" id="homeB" href="{{ path('banque_index') }}">
+                    <m class="ml-3">Home</m>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link white " id="compteB" href="#">
+                    <m class="ml-3">Compte</m>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link white " id="placementB" data-toggle="collapse" href="#item-3">
+                    <m class="ml-3">Placement</m>
+                </a>
+                <div id="item-3" class="collapse">
+                    <ul class="nav flex-column ml-5">
+                        <li class="nav-item">
+                            <a class="nav-link white" id="livretAB1" href="#">Livret A</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link white" id="livretAB2" href="#">Livret A</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link white" id="pelB" href="#">PEL</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link white" id="celB" href="#">CEL</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link white" id="chanelB" href="#">Chanel</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link white" id="adminPlacement" href="#">Admin</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link white " data-toggle="collapse" id="creditB" href="#item-4">
+                    <m class="ml-3">Crédit</m>
+                </a>
+                <div id="item-4" class="collapse">
+                    <ul class="nav flex-column ml-5 ">
+                        <li class="nav-item">
+                            <a class="nav-link white" id="maisonC"
+                                href="{{ path('credit_immo_banque_index') }}">Maison</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link white" id="voitureC"
+                                href="{{ path('credit_voiture_banque_index') }}">Voiture</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link white" id="autreC"
+                                href="{{ path('credit_divers_banque_index') }}">Autre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link white" id="adminCredit"
+                                href="{{ path('credit_divers_banque_index') }}">Admin</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link white " id="etablissementCB" href="{{ path('etablissement_banque_index') }}">
+                    <m class="ml-3">{{ 'établissement'|capitalize }}</m>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link white " id="admiCptB" href="{{ path('admin_banque_index') }}">
+                    <m class="ml-3">{{ 'Admin banque'|capitalize }}</m>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>

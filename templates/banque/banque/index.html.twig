@@ -1,0 +1,43 @@
+{% extends 'indexDefault.html.twig' %}
+
+{% block styleSheet %}{% endblock styleSheet%}
+
+{% block title %}Banque index{% endblock %}
+
+{% block main %}
+<h1>Banque index</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Etablissement</th>
+            <th>Logo</th>
+            <th>actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for banque in banques %}
+        <tr>
+            <td>{{ banque.id }}</td>
+            <td>{{ banque.etablissement }}</td>
+            <td>{{ banque.logo }}</td>
+            <td>
+                <a href="{{ path('banque_show', {'id': banque.id}) }}">show</a>
+                <a href="{{ path('banque_edit', {'id': banque.id}) }}">edit</a>
+            </td>
+        </tr>
+        {% else %}
+        <tr>
+            <td colspan="4">no records found</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="{{ path('banque_new') }}">Create new</a>
+
+{% endblock main %}
+
+{% block javaScripts %}
+{% endblock javaScripts %}

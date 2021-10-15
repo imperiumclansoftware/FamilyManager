@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Chequier{% endblock %}
+
+{% block body %}
+    <h1>Chequier</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ chequier.id }}</td>
+            </tr>
+            <tr>
+                <th>Chequier</th>
+                <td>{{ chequier.chequier }}</td>
+            </tr>
+            <tr>
+                <th>DateChequier</th>
+                <td>{{ chequier.dateChequier ? chequier.dateChequier|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>DebutNum</th>
+                <td>{{ chequier.debutNum }}</td>
+            </tr>
+            <tr>
+                <th>FinNum</th>
+                <td>{{ chequier.finNum }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('chequier_index') }}">back to list</a>
+
+    <a href="{{ path('chequier_edit', {'id': chequier.id}) }}">edit</a>
+
+    {{ include('chequier/_delete_form.html.twig') }}
+{% endblock %}

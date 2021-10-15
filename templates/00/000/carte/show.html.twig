@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Carte{% endblock %}
+
+{% block body %}
+    <h1>Carte</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ carte.id }}</td>
+            </tr>
+            <tr>
+                <th>NumCarte</th>
+                <td>{{ carte.numCarte }}</td>
+            </tr>
+            <tr>
+                <th>DateCarte</th>
+                <td>{{ carte.dateCarte ? carte.dateCarte|date('Y-m-d') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('carte_index') }}">back to list</a>
+
+    <a href="{{ path('carte_edit', {'id': carte.id}) }}">edit</a>
+
+    {{ include('carte/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TypeCompte index{% endblock %}
+
+{% block body %}
+    <h1>TypeCompte index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Type</th>
+                <th>Interet</th>
+                <th>Carte</th>
+                <th>Chequier</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for type_compte in type_comptes %}
+            <tr>
+                <td>{{ type_compte.id }}</td>
+                <td>{{ type_compte.type }}</td>
+                <td>{{ type_compte.interet }}</td>
+                <td>{{ type_compte.carte ? 'Yes' : 'No' }}</td>
+                <td>{{ type_compte.chequier ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('type_compte_show', {'id': type_compte.id}) }}">show</a>
+                    <a href="{{ path('type_compte_edit', {'id': type_compte.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('type_compte_new') }}">Create new</a>
+{% endblock %}
